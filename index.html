@@ -2,21 +2,47 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
     <title>Mi Porfolio</title>
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <div class="home">
-      <h1 class="title">Hi, I'm Turco. Full Stack developer y soy .</h1>
+      <h1 class="title">Hi, I'm Turco. Full Stack developer.</h1>
     </div>
-      <section>
+      <section class="about-me">
+
+      </section>
+      <section class="skills-and-work">
 
       </section>
       <section class="contact">
-        <h1 class="contact-title">Contact me</h1>
-        <form class="" action="" method="post">
+        <div class="contact-info">
+          <h1 class="contact-title">Contact me</h1>
+          <form class="" action="" method="post">
 
-        </form>
+          </form>
+        </div>
+        <div class="map-conteiner">
+          <div id="map"></div>
+          <script>
+            var map;
+            function initMap() {
+              var myLatLng = {lat: -34.556054, lng: -58.46315};
+              map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                zoom: 16
+              });
+              var marker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              title: "Turco's House!"
+              });
+            }
+          </script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlv10dKVftBUnD-F8XEyGxchlZ10-BZYU&callback=initMap"
+          async defer></script>
+        </div>
       </section>
   </body>
 </html>
